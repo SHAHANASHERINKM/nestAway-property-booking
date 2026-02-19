@@ -8,8 +8,20 @@ const cors=require("cors");
 dotenv.config();
 const port=process.env.PORT  || 5000;
 
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://nestaway-property-booking.onrender.com"
+];
+
 app.use(cors({
-    origin:["http://localhost:3000","https://nestaway-property-booking.onrender.com"]  
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true
 }));
 
 app.use(express.urlencoded({ extended: true }));
