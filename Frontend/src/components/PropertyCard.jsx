@@ -35,50 +35,67 @@ export default function PropertyCard({ property, isWishlisted }) {
     }
   }
   return (
-    <div onClick={handleOnclick} className='mt-10 bg-white rounded-xl text-sm text-gray-800 shadow-sm hover:shadow-lg transition overflow-hidden cursor-pointer'>
-      <div className='relative w-full h-56'>
-        <img
-          src={property.images?.[0]?.url}
+  <div
+    onClick={handleOnclick}
+    className="group mt-10 bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer"
+  >
+    <div className="relative w-full h-60 overflow-hidden">
+      <img
+        src={property.images?.[0]?.url}
+        alt={property.title}
+        className="w-full h-full object-cover transform group-hover:scale-110 transition duration-500"
+      />
 
-          alt={property.title}
-          className='w-full h-full object-cover'
-        />
-
-        <button onClick={(e) => {
+      <button
+        onClick={(e) => {
           e.stopPropagation();
           handleWishlist();
-        }} className="absolute top-3 right-3">
-          <HeartIcon
+        }}
+        className="absolute top-4 right-4 bg-white/80 backdrop-blur-md p-2 rounded-full shadow-md hover:scale-110 transition"
+      >
+        <HeartIcon
+          className={`w-5 h-5 ${
+            isWishlisted
+              ? "text-red-500 fill-red-500"
+              : "text-gray-700"
+          }`}
+        />
+      </button>
 
-            className={`w-6 h-6 cursor-pointer absolute top-3 right-3 ${isWishlisted ? "text-red-500 fill-red-500" : "text-white"
-              }`}
-          />
-        </button>
-      </div>
-
-      <div className='flex flex-col gap-4  mt-4 mb-4 md:m-4'>
-        <div className='flex items-center '>
-          <p className='flex items-center w-1/2 pl-2 truncate'>
-            <MapPinIcon className='h-5 w-5 mr-1 text-blue-800' />
-            {property.location}</p>
-          <p className='flex items-center w-1/2 pl-2'>
-            <StarIcon className='w-6 h-6 text-yellow-600' />
-            {property.rating}</p>
-        </div>
-
-        <div className='flex items-center'>
-          <p className='flex items-center w-1/2 pl-2'>
-            <CurrencyRupeeIcon className='text-blue-300 w-5 h-5 mr-1' />
-            {property.pricePerNight}/Night
-          </p>
-
-          <p className='flex items-center w-1/2 pl-2'>
-            <UsersIcon className='w-5 h-5 mr-1' />
-            {property.maxGuests}
-          </p>
-        </div>
-
+      <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full flex items-center shadow-sm">
+        <StarIcon className="w-4 h-4 text-yellow-500 mr-1" />
+        <span className="text-xs font-semibold text-gray-800">
+          {property.rating}
+        </span>
       </div>
     </div>
-  )
+
+    <div className="p-5 flex flex-col gap-3">
+      <div className="flex items-center text-gray-600 text-sm">
+        <MapPinIcon className="h-4 w-4 mr-1 text-[#0F766E]" />
+        <p className="truncate">{property.location}</p>
+      </div>
+
+      <div className="flex items-center text-gray-600 text-sm">
+        <UsersIcon className="w-4 h-4 mr-1 text-[#0F766E]" />
+        <span>{property.maxGuests} Guests</span>
+      </div>
+
+      <div className="flex items-center justify-between mt-2">
+        <div className="flex items-center text-lg font-semibold text-gray-900">
+          <CurrencyRupeeIcon className="w-5 h-5 mr-1 text-[#0F766E]" />
+          {property.pricePerNight}
+          <span className="text-sm font-normal text-gray-500 ml-1">
+            / night
+          </span>
+        </div>
+
+        <span className="text-xs text-[#0F766E] font-medium bg-[#0F766E]/10 px-3 py-1 rounded-full">
+          View Details
+        </span>
+      </div>
+    </div>
+  </div>
+);
+
 }
