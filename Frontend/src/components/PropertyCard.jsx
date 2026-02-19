@@ -34,16 +34,16 @@ export default function PropertyCard({ property, isWishlisted }) {
       alert(error?.message || "Wishlist error");
     }
   }
-  return (
+ return (
   <div
     onClick={handleOnclick}
-    className="group mt-10 bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer"
+    className="group w-full mt-6 bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer"
   >
-    <div className="relative w-full h-60 overflow-hidden">
+    <div className="relative w-full h-52 sm:h-60 overflow-hidden">
       <img
         src={property.images?.[0]?.url}
         alt={property.title}
-        className="w-full h-full object-cover transform group-hover:scale-110 transition duration-500"
+        className="w-full h-full object-cover transform group-hover:scale-105 transition duration-500"
       />
 
       <button
@@ -70,7 +70,7 @@ export default function PropertyCard({ property, isWishlisted }) {
       </div>
     </div>
 
-    <div className="p-5 flex flex-col gap-3">
+    <div className="p-4 sm:p-5 flex flex-col gap-3">
       <div className="flex items-center text-gray-600 text-sm">
         <MapPinIcon className="h-4 w-4 mr-1 text-[#0F766E]" />
         <p className="truncate">{property.location}</p>
@@ -82,7 +82,7 @@ export default function PropertyCard({ property, isWishlisted }) {
       </div>
 
       <div className="flex items-center justify-between mt-2">
-        <div className="flex items-center text-lg font-semibold text-gray-900">
+        <div className="flex items-center text-base sm:text-lg font-semibold text-gray-900">
           <CurrencyRupeeIcon className="w-5 h-5 mr-1 text-[#0F766E]" />
           {property.pricePerNight}
           <span className="text-sm font-normal text-gray-500 ml-1">
@@ -90,12 +90,11 @@ export default function PropertyCard({ property, isWishlisted }) {
           </span>
         </div>
 
-        <span className="text-xs text-[#0F766E] font-medium bg-[#0F766E]/10 px-3 py-1 rounded-full">
-          View Details
-        </span>
+
       </div>
     </div>
   </div>
 );
+
 
 }
