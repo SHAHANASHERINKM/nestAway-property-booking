@@ -8,6 +8,7 @@ function AdminDashboard() {
   const [reqHost, setReqHost] = useState([]);
   const [propertyReq, setPropertyReq] = useState([]);
   const [counts,setCounts]=useState([]);
+  const navigate=useNavigate();
 
   useEffect(() => {
     const fetchRecentHostRequest = async () => {
@@ -245,7 +246,7 @@ function AdminDashboard() {
 
 
                     <td className='flex gap-4 py-3 '>
-                      <button onClick={() => handleApprove(req.id)} className='rounded-md bg-primary text-white px-2 py-2'>Review</button>
+                      <button onClick={() => navigate(`/admin/viewProperty/${property._id}`)} className='rounded-md bg-primary text-white px-2 py-2'>Review</button>
                     </td>
 
 
