@@ -40,17 +40,17 @@ function Dashboard() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
 
-        <div onClick={()=>navigate("/host/property")} className="bg-white rounded-xl shadow-sm p-6">
+        <div onClick={()=>navigate("/host/property")} className="bg-white rounded-xl shadow-sm p-6 hover:bg-bg hover:scale-105 hover:shadow-lg">
           <p className="text-gray-500 text-sm">Total Properties</p>
           <h2 className="text-3xl font-bold text-primary mt-2"> {properties?.count} </h2>
         </div>
 
-        <div onClick={()=>navigate("/host/propertyBookings")} className="bg-white rounded-xl shadow-sm p-6">
+        <div onClick={()=>navigate("/host/propertyBookings")} className="bg-white rounded-xl shadow-sm p-6 hover:bg-bg hover:scale-105 hover:shadow-lg">
           <p className="text-gray-500 text-sm">Total Bookings</p>
           <h2 className="text-3xl font-bold text-primary mt-2"> {bookings?.totalCount} </h2>
         </div>
 
-        <div  className="bg-white rounded-xl shadow-sm p-6">
+        <div  className="bg-white rounded-xl shadow-sm p-6 hover:bg-bg hover:scale-105 hover:shadow-lg">
           <p className="text-gray-500 text-sm">Total Earnings</p>
           <h2 className="text-3xl font-bold text-primary mt-2">₹ 45,000</h2>
         </div>
