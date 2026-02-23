@@ -52,21 +52,21 @@ export default function BookingManagement() {
       {/* Summary Cards */}
       <div className="grid md:grid-cols-3 gap-6 mb-8">
 
-        <div className="bg-white rounded-xl shadow-sm p-6">
+        <div className="bg-white rounded-xl shadow-sm p-6 hover:bg-bg hover:scale-105 hover:shadow-lg">
           <p className="text-gray-500">Total Bookings</p>
           <h2 className="text-3xl font-bold text-primary mt-2">
             {totalBookings}
           </h2>
         </div>
 
-        <div className="bg-white rounded-xl shadow-sm p-6">
+        <div className="bg-white rounded-xl shadow-sm p-6 hover:bg-bg hover:scale-105 hover:shadow-lg">
           <p className="text-gray-500">Confirmed Bookings</p>
           <h2 className="text-3xl font-bold text-green-600 mt-2">
             {confirmedBookings}
           </h2>
         </div>
 
-        <div className="bg-white rounded-xl shadow-sm p-6">
+        <div className="bg-white rounded-xl shadow-sm p-6 hover:bg-bg hover:scale-105 hover:shadow-lg">
           <p className="text-gray-500">Pending Bookings</p>
           <h2 className="text-3xl font-bold text-yellow-600 mt-2">
             {pendingBookings}
@@ -86,7 +86,7 @@ export default function BookingManagement() {
                 : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               }`}
           >
-            {item}
+            {item==="all"?"All":item==="pending"?"Pending":item==="confirmed"?"Confirmed":item==="completed"?"Completed":"Cancelled"}
           </button>
         ))}
       </div>

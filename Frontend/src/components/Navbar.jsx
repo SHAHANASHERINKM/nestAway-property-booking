@@ -78,7 +78,7 @@ function Navbar() {
     return (
         <header className='w-full bg-white border-b sticky top-0 z-50  '>
             <nav className='max-w-7xl mx-auto flex items-center justify-between px-6 py-4'>
-                <NavLink to="#" className='flex items-center text-primary text-2xl font-bold'>
+                <NavLink to="/" className='flex items-center text-primary text-2xl font-bold'>
                     <img src={logo} className='w-10 h-10 mr-2' />
 
                     NestAway

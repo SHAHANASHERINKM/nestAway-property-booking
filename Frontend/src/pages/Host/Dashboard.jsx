@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { fetchHostBookings, fetchHostProperties } from "../../services/propertyService";
+import { useNavigate } from "react-router-dom";
 
 function Dashboard() {
 
 
   const [bookings, setBookings] = useState(null);
   const [properties, setProperties] = useState();
+  const navigate=useNavigate();
 
   useEffect(() => {
     const fetchBookings = async () => {
@@ -38,17 +40,17 @@ function Dashboard() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
 
-        <div className="bg-white rounded-xl shadow-sm p-6">
+        <div onClick={()=>navigate("/host/property")} className="bg-white rounded-xl shadow-sm p-6">
           <p className="text-gray-500 text-sm">Total Properties</p>
           <h2 className="text-3xl font-bold text-primary mt-2"> {properties?.count} </h2>
         </div>
 
-        <div className="bg-white rounded-xl shadow-sm p-6">
+        <div onClick={()=>navigate("/host/propertyBookings")} className="bg-white rounded-xl shadow-sm p-6">
           <p className="text-gray-500 text-sm">Total Bookings</p>
           <h2 className="text-3xl font-bold text-primary mt-2"> {bookings?.totalCount} </h2>
         </div>
 
-        <div className="bg-white rounded-xl shadow-sm p-6">
+        <div  className="bg-white rounded-xl shadow-sm p-6">
           <p className="text-gray-500 text-sm">Total Earnings</p>
           <h2 className="text-3xl font-bold text-primary mt-2">₹ 45,000</h2>
         </div>

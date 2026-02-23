@@ -52,6 +52,7 @@ function PropertyDetails() {
     if (!property) return <div className='text-center mt-10'>Property not found(frontend)</div>
     return (
         <div className='w-full'>
+         
             <h1 className='font-semibold text-[30px]  text-primary  font-serif'>{property.title}</h1>
             <ImageSection images={property.images} />
             <DescriptionSection property={property} averageRating={averageRating} />

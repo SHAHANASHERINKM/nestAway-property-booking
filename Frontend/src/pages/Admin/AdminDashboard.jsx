@@ -99,22 +99,22 @@ function AdminDashboard() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
 
-        <div className="bg-white rounded-xl shadow-sm p-6">
+        <div onClick={()=>navigate("/admin/users")} className="bg-white rounded-xl shadow-sm p-6 hover:bg-bg hover:scale-105 hover:shadow-lg">
           <p className="text-primary text-lg flex  gap-5">Total Users <UserGroupIcon className='w-8 h-8 text-primary' /></p>
           <h2 className="text-3xl font-bold text-primary mt-2"> {counts.users} </h2>
         </div>
 
-        <div className="bg-white rounded-xl shadow-sm p-6">
+        <div onClick={()=>navigate("/admin/hosts")} className="bg-white rounded-xl shadow-sm p-6 hover:bg-bg hover:scale-105 hover:shadow-lg">
           <p className="text-primary flex gap-5 text-lg">Total Hosts <UserGroupIcon className='w-8 h-8 text-primary' /> </p>
           <h2 className="text-3xl font-bold text-primary mt-2"> {counts.hosts} </h2>
         </div>
 
-        <div className="bg-white rounded-xl shadow-sm p-6">
+        <div onClick={()=>navigate("/admin/properties")} className="bg-white rounded-xl shadow-sm p-6 hover:bg-bg hover:scale-105 hover:shadow-lg">
           <p className="text-primary flex gap-5 text-lg">Total Properties <BuildingOffice2Icon className='w-8 h-8 text-primary' /> </p>
           <h2 className="text-3xl font-bold text-primary mt-2"> {counts.properties}</h2>
         </div>
 
-        <div className="bg-white rounded-xl shadow-sm p-6">
+        <div onClick={()=>navigate("/admin/bookings")} className="bg-white rounded-xl shadow-sm p-6 hover:bg-bg hover:scale-105 hover:shadow-lg">
           <p className="text-primary flex gap-5 text-lg">Total Bookings <CalendarIcon className='w-8 h-8' />  </p>
           <h2 className="text-3xl font-bold  text-primary mt-2">{counts.bookings}</h2>
         </div>

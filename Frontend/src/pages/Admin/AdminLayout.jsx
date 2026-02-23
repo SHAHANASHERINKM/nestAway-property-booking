@@ -51,7 +51,7 @@ function AdminLayout() {
                         <XMarkIcon className="w-6 h-6 text-red-600" />
                     </button>
                 </div>
-                <NavLink to="#" className='flex items-center text-primary text-2xl mb-5 font-bold'>
+                <NavLink to="/admin/dashboard" className='flex items-center text-primary text-2xl mb-5 font-bold'>
                     <img src={logo} className='w-10 h-10 mr-2' />
 
                     NestAway

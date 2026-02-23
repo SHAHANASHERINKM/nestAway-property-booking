@@ -89,7 +89,7 @@ export default function Properties() {
                 : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               }`}
           >
-            {item}
+            {item==="all"?"All":item==="pending"?"Pending":item==="approved"?"Approved":"Rejected"}
           </button>
         ))}
       </div>
